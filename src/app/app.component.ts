@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {OverlayContainer} from '@angular/cdk/overlay';
 
 
 @Component({
@@ -9,7 +10,11 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'app';
   sampleText: 'Lorem ipsum asdie';
-  theme = 'my-theme';
+  theme = 'custom-light-theme';
+
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add(this.theme);
+  }
 
   ngOnInit(): void {
   }

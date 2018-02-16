@@ -3,7 +3,10 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
-import {MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule} from '@angular/material';
+import {
+  MatButtonModule, MatCheckboxModule, MatIconModule, MatMenuModule, MatToolbarModule, MatCardModule,
+  MATERIAL_SANITY_CHECKS
+} from '@angular/material';
 import {NavbarComponent} from './navbar/navbar.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
@@ -21,7 +24,7 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatMenuModule, MatIconModule, MatCardModule
   ],
-  providers: [],
+  providers: [{provide: MATERIAL_SANITY_CHECKS, useValue: false}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

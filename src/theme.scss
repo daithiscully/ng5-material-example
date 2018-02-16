@@ -1,31 +1,32 @@
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~@angular/material/theming";
 
 @include mat-core();
 
-$my-theme-primary: mat-palette($mat-cyan);
-$my-theme-accent: mat-palette($mat-teal, 400, 200, 600);
-$my-theme-warn: mat-palette($mat-red);
+$custom-light-theme-primary: mat-palette($mat-cyan);
+$custom-light-theme-accent: mat-palette($mat-teal, 400, 200, 600);
+$custom-light-theme-warn: mat-palette($mat-red);
 
-$my-theme: mat-light-theme(
-    $my-theme-primary,
-    $my-theme-accent,
-    $my-theme-warn
+$custom-light-theme: mat-light-theme(
+    $custom-light-theme-primary,
+    $custom-light-theme-accent,
+    $custom-light-theme-warn
 );
 
-$my-second-theme-primary: mat-palette($mat-cyan);
-$my-second-theme-accent: mat-palette($mat-pink, 400, 200, 600);
-$my-second-theme-warn: mat-palette($mat-red);
+$custom-dark-theme-primary: mat-palette($mat-cyan);
+$custom-dark-theme-accent: mat-palette($mat-pink, 400, 200, 600);
+$custom-dark-theme-warn: mat-palette($mat-red);
 
-$my-second-theme: mat-dark-theme(
-    $my-second-theme-primary,
-    $my-second-theme-accent,
-    $my-second-theme-warn
+$custom-dark-theme: mat-dark-theme(
+    $custom-dark-theme-primary,
+    $custom-dark-theme-accent,
+    $custom-dark-theme-warn
 );
 
-.my-theme {
-  @include angular-material-theme($my-theme);
+.custom-light-theme {
+  @include angular-material-theme($custom-light-theme);
 }
 
-.my-second-theme{
-  @include angular-material-theme($my-second-theme);
+.custom-dark-theme {
+  @include angular-material-theme($custom-dark-theme);
 }

@@ -27,11 +27,11 @@ export class NavbarComponent implements OnInit {
 
 
   useTheme1() {
-    this.theme = 'my-theme';
-    this.themeChange.emit('my-theme');
+    this.theme = 'custom-light-theme';
+    this.themeChange.emit('custom-light-theme');
   }
   useTheme2() {
-    this.theme = 'my-second-theme';
-    this.themeChange.emit('my-second-theme');
+    this.theme = 'custom-dark-theme';
+    this.themeChange.emit('custom-dark-theme');
   }
 }
