@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
+<div [class]="theme">
+<app-navbar (themeChange)="updateTheme($event)"></app-navbar>
 <app-dashboard></app-dashboard>
+</div>

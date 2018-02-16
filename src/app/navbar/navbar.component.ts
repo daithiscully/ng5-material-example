@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  @Input('theme') theme: string;
+  @Output('themeChange') themeChange = new EventEmitter();
 
   constructor() { }
 
@@ -20,5 +23,15 @@ export class NavbarComponent implements OnInit {
   }
   link3ClickHandle() {
     console.log(`Link 3 clicked in the navbar`);
+  }
+
+
+  useTheme1() {
+    this.theme = 'my-theme';
+    this.themeChange.emit('my-theme');
+  }
+  useTheme2() {
+    this.theme = 'my-second-theme';
+    this.themeChange.emit('my-second-theme');
   }
 }

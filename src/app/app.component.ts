@@ -9,7 +9,12 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'app';
   sampleText: 'Lorem ipsum asdie';
+  theme = 'my-theme';
 
   ngOnInit(): void {
+  }
+
+  updateTheme(theme: string) {
+    this.theme = theme;
   }
 }
