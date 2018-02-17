@@ -1,16 +1,25 @@
 <mat-toolbar color="primary">
-  <button mat-button (click)="link1ClickHandle()">Home</button>
-  <button mat-button (click)="link1ClickHandle()">About</button>
-  <button mat-button (click)="link1ClickHandle()">History</button>
-  <button mat-button (click)="link1ClickHandle()">Contact</button>
-  <span class="spacer"></span>
-  <button mat-raised-button (click)="link1ClickHandle()">Log in</button>
-  <button mat-flat-button (click)="link1ClickHandle()">Sign up</button>
-  <button mat-icon-button [matMenuTriggerFor]="appMenu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #appMenu="matMenu">
-    <button mat-menu-item (click)="useTheme1()"><span>Light Theme</span></button>
-    <button mat-menu-item (click)="useTheme2()"><span>Dark Theme</span></button>
-  </mat-menu>
+  <div>
+    <button fxHide.xl fxHide.lg fxHide.md mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div fxLayoutGap="10px">
+    <a>LOGO</a>
+    <a routerLink="/signup">Signup</a>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/dashboard">Dashboard</a>
+    <button mat-button routerLink="/">Home</button>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <button mat-raised-button routerLink="/login">Log in</button>
+    <button mat-flat-button routerLink="/signup">Sign up</button>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item (click)="useTheme1()"><span>Light Theme</span></button>
+      <button mat-menu-item (click)="useTheme2()"><span>Dark Theme</span></button>
+    </mat-menu>
+  </div>
 </mat-toolbar>

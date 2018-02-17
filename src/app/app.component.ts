@@ -8,8 +8,7 @@ import {OverlayContainer} from '@angular/cdk/overlay';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  sampleText: 'Lorem ipsum asdie';
+
   theme = 'custom-light-theme';
 
   constructor(overlayContainer: OverlayContainer) {

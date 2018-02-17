@@ -9,6 +9,8 @@ export class NavbarComponent implements OnInit {
 
   @Input('theme') theme: string;
   @Output('themeChange') themeChange = new EventEmitter();
+  @Input('sideNavOpen') sideNavOpen: boolean;
+  @Output('sideNavChange') sideNavChange = new EventEmitter();
 
   constructor() { }
 
@@ -18,13 +20,6 @@ export class NavbarComponent implements OnInit {
   link1ClickHandle() {
     console.log(`Link 1 clicked in the navbar`);
   }
-  link2ClickHandle() {
-    console.log(`Link 2 clicked in the navbar`);
-  }
-  link3ClickHandle() {
-    console.log(`Link 3 clicked in the navbar`);
-  }
-
 
   useTheme1() {
     this.theme = 'custom-light-theme';
@@ -33,5 +28,10 @@ export class NavbarComponent implements OnInit {
   useTheme2() {
     this.theme = 'custom-dark-theme';
     this.themeChange.emit('custom-dark-theme');
+  }
+
+  toggleSidenav() {
+    this.sideNavOpen = !this.sideNavOpen;
+    this.sideNavChange.emit(this.sideNavOpen);
   }
 }
