@@ -1,9 +1,44 @@
-<mat-card>
-  <button mat-button color="primary">Button 1</button>
-  <button mat-raised-button color="accent">Button 2</button>
-  <button mat-stroked-button color="warn">Button 3</button>
-  <button mat-flat-button color="primary">Button 4</button>
-  <button mat-icon-button color="accent">Button 5</button>
-</mat-card>
-<mat-card>
-</mat-card>
+<div class="form-container">
+  <form class="login-form" [formGroup]="loginForm">
+    <!--<mat-card>
+      <button mat-button color="primary">Button 1</button>
+      <button mat-raised-button color="accent">Button 2</button>
+      <button mat-stroked-button color="warn">Button 3</button>
+      <button mat-flat-button color="primary">Button 4</button>
+      <button mat-icon-button color="accent">Button 5</button>
+    </mat-card>-->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h1>Login</h1></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="login-form-field">
+          <input formControlName="username" matInput placeholder="Username">
+          <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="login-form-field">
+          <input formControlName="password" matInput type="password" placeholder="Password">
+          <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="login-form-field">
+          <mat-select placeholder="Select">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-raised-button color="primary" (click)="login()">Login</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+  <br>
+</div>
+<div class="other-user-actions">
+  <button style="margin-right: 120px;" mat-raised-button color="accent">Sign up</button>
+  <button mat-raised-button color="warn">Forgot password</button>
+</div>

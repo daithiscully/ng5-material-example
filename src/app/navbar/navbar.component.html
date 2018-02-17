@@ -1,9 +1,11 @@
 <mat-toolbar color="primary">
-  <span (click)="link1ClickHandle()">Home</span>
+  <button mat-button (click)="link1ClickHandle()">Home</button>
+  <button mat-button (click)="link1ClickHandle()">About</button>
+  <button mat-button (click)="link1ClickHandle()">History</button>
+  <button mat-button (click)="link1ClickHandle()">Contact</button>
   <span class="spacer"></span>
-  <span (click)="link2ClickHandle()">Dashboard</span>
-  <span class="spacer"></span>
-  <span (click)="link3ClickHandle()">Testing</span>
+  <button mat-raised-button (click)="link1ClickHandle()">Log in</button>
+  <button mat-flat-button (click)="link1ClickHandle()">Sign up</button>
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
     <mat-icon>more_vert</mat-icon>
   </button>
@@ -11,5 +13,4 @@
     <button mat-menu-item (click)="useTheme1()"><span>Light Theme</span></button>
     <button mat-menu-item (click)="useTheme2()"><span>Dark Theme</span></button>
   </mat-menu>
-
 </mat-toolbar>
